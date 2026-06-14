@@ -841,7 +841,52 @@ body {
 
 /* ─── RESPONSIVE ───────────────────────────────────────── */
 @media (max-width: 1200px) { #app { grid-template-columns: 200px 1fr 220px; } }
-@media (max-width: 900px) { #app { grid-template-columns: 1fr; } #left-panel, #right-panel { display: none; } }
+@media (max-width: 900px) {
+  #app { display: block; }
+  #left-panel, #center, #right-panel { width: 100%; }
+  #left-panel, #right-panel {
+    display: block;
+    min-height: auto;
+    max-height: none;
+    border: none;
+    border-radius: 0;
+  }
+  #center { height: auto; }
+  #left-panel, #right-panel { overflow: visible; }
+  #farm-container { min-height: 320px; }
+  .section { padding: 16px 12px; }
+  .header-kpis { flex-wrap: wrap; gap: 8px; }
+  .kpi { padding: 8px 12px; font-size: 10px; }
+  .telem-primary { grid-template-columns: 1fr; }
+  .tabs { flex-wrap: wrap; }
+  .tab { flex: 1 1 48%; min-width: 48%; }
+  #camera-feeds { grid-template-columns: repeat(2, 1fr); }
+  .cam-feed { min-height: 90px; }
+  #controls { flex-direction: column; align-items: stretch; }
+  .ctl-btn { width: 100%; }
+  .layer-group { width: 100%; justify-content: space-between; }
+  .layer-btn { flex: 1 1 auto; min-width: 0; }
+}
+@media (max-width: 600px) {
+  #header { padding: 0 12px; }
+  .logo-name { font-size: 13px; }
+  .logo-sub { font-size: 8px; }
+  .header-kpis { gap: 6px; }
+  .kpi { padding: 7px 10px; font-size: 9px; }
+  .kpi-val { font-size: 12px; }
+  .section { padding: 14px 10px; }
+  .section-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .tabs { gap: 6px; }
+  .tab { min-width: 100%; }
+  #camera-feeds { grid-template-columns: 1fr; }
+  .cam-feed { min-height: 80px; }
+  #controls { row-gap: 8px; }
+  .layer-group { flex-wrap: wrap; }
+  .layer-btn { width: 48%; margin-bottom: 6px; }
+  .zone-item { flex-wrap: wrap; gap: 6px; }
+  .zone-name { font-size: 11px; }
+  #farm-container { min-height: 280px; }
+}
 </style>
 </head>
 <body>
